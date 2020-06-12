@@ -44,14 +44,16 @@ class LinkedList:
         #last item
         prev = None
         node = self.head
+        nxt = None
 
         if not node:
             return None
 
-        while node:
-            node.set_next(prev)
-            prev = node
-            node.get_next()
+        while node is not None:
+           nxt = node.next_node
+           node.next_node = prev
+           prev = node
+           node = nxt
         self.head = prev
 
             
